@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Restaurants</h1>
+  <%= link_to "Add a restaurant", new_restaurant_path, class: "btn btn-primary mb-3" %>
+  <ul class="list-group">
+    <% @restaurants.each do |restaurant| %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <%= restaurant.name %>
+        <%= restaurant.adress %>
+        <%= restaurant.phone_number %>
+        <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-secondary" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
